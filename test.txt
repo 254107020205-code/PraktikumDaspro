@@ -1,0 +1,4 @@
+Hello World, ini file random saja
+
+git config --global user.email "254107020205@student.polinema.ac.id"
+  git config --global user.name "254107020205"
