@@ -6,18 +6,18 @@ public class ifCetakKRS25 {
 public static void main(String[] args){
      Scanner sc=new Scanner(System.in);
 
-
-     System.out.print("--- Cetak KRS SIAKAD --- ");
-        System.out.print("Apakah UKT sudah lunas? (True/false): ");
+        // Input status pembayaran UKT
+        System.out.print("Apakah UKT sudah lunas? (true/false): ");
         boolean uktlunas = sc.nextBoolean();
 
-        if (uktlunas) {
-            System.out.print("Pembayaran UKT terverivikasi");
-            System.out.print("Silahkan cetak KRS dan minta tanda tangan DPA");
-        } else {
-            System.out.print("Pembayaran UKT belum terverivikasi");
-            System.out.print("Silahkan lunasi UKT terlebih dahulu");
-        }
+       // Tambahan: Versi menggunakan Ternary Operator
+        String pesanVerifikasi = uktlunas
+                ? "Pembayaran UKT terverifikasi\nSilakan cetak KRS dan minta tanda tangan DPA"
+                : "Pembayaran UKT belum terverifikasi\nSilakan lunasi UKT terlebih dahulu";
+        System.out.println(pesanVerifikasi);
+
+
+    
         sc.close();
     }
 }
