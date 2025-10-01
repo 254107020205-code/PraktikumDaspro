@@ -14,7 +14,10 @@ public static void main(String[] args){
         if (uktlunas) {
             System.out.print("Pembayaran UKT terverivikasi");
             System.out.print("Silahkan cetak KRS dan minta tanda tangan DPA");
-            sc.close();
+        } else {
+            System.out.print("Pembayaran UKT belum terverivikasi");
+            System.out.print("Silahkan lunasi UKT terlebih dahulu");
         }
+        sc.close();
     }
 }
