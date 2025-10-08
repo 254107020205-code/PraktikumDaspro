@@ -1,0 +1,112 @@
+package jobsheet5.jobsheet6.casemethod1;
+
+
+import java.util.Scanner;
+
+public class CaseMethod1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        
+        System.out.println("=== Input data Mahasiswa ===");
+
+       
+        System.out.println("\nMata Kuliah 1: Algoritma dan Pemrograman");
+        System.out.print("Nilai UTS: ");
+        double uts1 = input.nextDouble();
+        System.out.print("Nilai UAS: ");
+        double uas1 = input.nextDouble();
+        System.out.print("Nilai Tugas: ");
+        double tugas1 = input.nextDouble();
+
+        
+        System.out.println("\nMata Kuliah 2: Struktur Data");
+        System.out.print("Nilai UTS: ");
+        double uts2 = input.nextDouble();
+        System.out.print("Nilai UAS: ");
+        double uas2 = input.nextDouble();
+        System.out.print("Nilai Tugas: ");
+        double tugas2 = input.nextDouble();
+
+      
+        double akhir1 = (0.3 * uts1) + (0.4 * uas1) + (0.3 * tugas1);
+        double akhir2 = (0.3 * uts2) + (0.4 * uas2) + (0.3 * tugas2);
+
+        System.out.println("\n=== HASIL PER MATA KULIAH ===");
+        System.out.println("Algoritma dan Pemrograman:");
+        tampilkanHasil(akhir1);
+
+        System.out.println("Struktur Data:");
+        tampilkanHasil(akhir2);
+
+        
+        System.out.println("\n====== STATUS KELULUSAN SEMESTER ======");
+        if (akhir1 >= 60 && akhir2 >= 60) {
+            double rataRata = (akhir1 + akhir2) / 2;
+            if (rataRata >= 70) {
+                System.out.println("Status Semester: LULUS");
+            } else {
+                System.out.println("Status Semester: TIDAK LULUS (Rata-rata < 70)");
+            }
+        } else {
+            System.out.println("Status Semester: TIDAK LULUS (Salah satu mata kuliah tidak lulus)");
+        }
+
+        input.close();
+    }
+
+   
+    public static void tampilkanHasil(double nilaiAkhir) {
+        String huruf, kualifikasi;
+        double mutu;
+
+        if (nilaiAkhir >= 80 && nilaiAkhir <= 100) {
+            huruf = "A";
+            mutu = 4.0;
+            kualifikasi = "Sangat Baik";
+        } else if (nilaiAkhir >= 73) {
+            huruf = "B+";
+            mutu = 3.5;
+            kualifikasi = "Lebih dari Baik";
+        } else if (nilaiAkhir >= 65) {
+            huruf = "B";
+            mutu = 3.0;
+            kualifikasi = "Baik";
+        } else if (nilaiAkhir >= 60) {
+            huruf = "C+";
+            mutu = 2.5;
+            kualifikasi = "Lebih dari Cukup";
+        } else if (nilaiAkhir >= 55) {
+            huruf = "C";
+            mutu = 2.0;
+            kualifikasi = "Cukup";
+        } else if (nilaiAkhir >= 50) {
+            huruf = "D";
+            mutu = 1.0;
+            kualifikasi = "Kurang";
+        } else {
+            huruf = "E";
+            mutu = 0.0;
+            kualifikasi = "Gagal";
+        }
+
+        System.out.printf("Nilai Akhir: %.2f\n", nilaiAkhir);
+        System.out.println("Nilai Huruf: " + huruf);
+        System.out.println("Nilai Mutu : " + mutu);
+        System.out.println("Kualifikasi: " + kualifikasi);
+
+        if (nilaiAkhir >= 60) {
+            System.out.println("Status: LULUS\n");
+        } else {
+            System.out.println("Status: TIDAK LULUS\n");
+        }
+    }
+}
+
+
+
+    
+
+
+
+
